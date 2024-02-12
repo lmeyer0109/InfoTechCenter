@@ -1,9 +1,25 @@
 
-#Import Libraries Here
+# Import Libraries Here
 import time
+import sys
 
-timeToSleep = 4
+timeToSleep = 1
 
 print("\n\nWelcome to InfoTech Center V1.0\n")
 time.sleep(timeToSleep)
-print("InfoTech Center System Loading...")
+
+# Code to have the elilipsis add a dot every /5 seconds
+x = 0
+ellipsis = 0
+
+while x != 20:
+    x += 1
+    message = ("InfoTech Center System Loading" + "." * ellipsis)
+    ellipsis = ellipsis + 1
+    sys.stdout.write("\r" + message) # \r prints a carriage return first
+    time.sleep(.5)
+    if  ellipsis == 4:
+        ellipsis =0
+    if x == 20:
+        print("\n\nOperating System Booted Up - Retina Scanned - Access Granted!")
+
